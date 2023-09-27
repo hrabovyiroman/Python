@@ -12,9 +12,16 @@ def temperature_convert_2(degrees:float,type:str):
         return round((degrees - 32) * 5 / 9, 3)
     else:
         return round(degrees * 9 / 5 + 32, 3)
-    
+
+# 4 question -------------------------------------------------------------   
+
+radius = float(input("Введіть радіус: "))
+pi = 3.1415
+area = round(pi * (radius ** 2), 3)
+print("Площа кола буде - ", area, "см^2")
+
 # 6 question -------------------------------------------------------------   
- 
+
 def n_comp_6(number):
     """
     Функція приймає число n та виконує з ним операцію n + nn + nnn
@@ -23,13 +30,41 @@ def n_comp_6(number):
     """
     return number + (number*10 + number) + (number*100 + number*10 + number)
 
+# 8 question -------------------------------------------------------------   
+
+from datetime import datetime
+
+print("Введіть, будь ласка, 3 числа: ")
+day = int(input("День народження: "))
+month = int(input("Місяць народження: "))
+year = int(input("Рік народження: "))
+
+today_date = datetime.now().date()
+birthday_date = datetime(year, month, day).date()
+
+total_number_of_days = (today_date - birthday_date).days
+print(total_number_of_days, "днів - загальна кількість днів від народження.")
+
 # 10 question -------------------------------------------------------------
 
 def dec_rand_10():
     '''Функція повертає випадкове число від 1 до 10 з 2 знаками після коми'''
     from random import random
     return round(random() * 10, 2)
+    
+# 12 question -------------------------------------------------------------  
 
+credits_ = int(input("Скільки кредитів ви одтривали? "))
+
+if credits_ <= 23:
+    print("Студент є першокурсником.")
+elif 24 <= credits_ <= 53:
+    print("Студенти є другокурсниками.")
+elif 54 <= credits_ <= 83:
+    print("Студент є юніор.")
+else:
+    print("Студент є старшокурсником.")
+    
 # 14 question -------------------------------------------------------------
 
 def rock_paper_scisors_14():
@@ -72,7 +107,25 @@ def rock_paper_scisors_14():
         print('Перемога!')
     else:
         print('Поразка')    
-        
+
+# 12 question -------------------------------------------------------------  
+
+def johns_savings(N):
+    beginning_savings = 300
+    month_savings = 100
+    every_six_month_savings = 500
+
+    for month in range(1, N + 1):
+        beginning_savings += month_savings
+        if month % 6 == 0:
+            beginning_savings += every_six_month_savings
+    return beginning_savings
+
+
+N = int(input("Введіть кількість місяців: "))
+
+savings = johns_savings(N)
+print(f"Заощадження Джона через {N} місяців становить ${savings}.")
 
 # 18 question -------------------------------------------------------------
 
@@ -82,6 +135,23 @@ def tuple_reverse_18(tupl:tuple):
     >> (5,4,3,2,1)'''
     return tupl[::-1]
 
+# 20 question -------------------------------------------------------------
+
+def remove_empty_strings(list_):
+    result = []
+    for i in list_:
+        if i.strip():
+            result.append(i)
+
+    return result
+
+
+input_list = ["Зима", "", "Весна", "", "Літо", "", "Осінь"]
+filtered_list = remove_empty_strings(input_list)
+
+for string in filtered_list:
+    print(string)
+    
 # 22 question -------------------------------------------------------------
 
 def profit_22(lst:list):
