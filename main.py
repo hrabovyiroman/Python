@@ -19,6 +19,47 @@ def temperature_convert_2(degrees:float,type:str):
     else:
         return round(degrees * 9 / 5 + 32, 3)
 
+# 3 question ------------------------------------------------------------
+def manipulate_integer_list():
+    # Попросити користувача ввести список цілих чисел
+    input_str = input("Enter a list of integers separated by spaces: ")
+    
+    # Перетворення вхідного рядка на список цілих чисел
+    input_list = [int(x) for x in input_str.split()]
+
+    # Print the last item in the list
+    print("Last item in the list:", input_list[-1])
+
+    # Надрукувати останній елемент у списку
+    print("List in reverse order:", input_list[::-1])
+
+    # Перевірте, чи список містить 5
+    if 5 in input_list:
+        print("Yes")
+    else:
+        print("No")
+
+    # Вивести число п'ятірок у списку
+    count_fives = input_list.count(5)
+    print("Number of fives in the list:", count_fives)
+
+    # Видаліть перший і останній елементи, відсортуйте елементи, що залишилися, і надрукуйте результат
+    if len(input_list) >= 2:
+        input_list.pop(0)  # Видалити перший елемент
+        input_list.pop()   # Видалити останній елемент
+        input_list.sort()
+        print("List after removing first and last items and sorting:", input_list)
+    else:
+        print("List has less than 2 elements, cannot remove first and last items.")
+
+    # Виведіть, скільки цілих чисел у списку менше 5
+    count_less_than_5 = sum(1 for x in input_list if x < 5)
+    print("Number of integers in the list less than 5:", count_less_than_5)
+
+# Виклик функції для її виконання
+manipulate_integer_list()
+
+
 # 4 question -------------------------------------------------------------   
 
 radius = float(input("Введіть радіус: "))
@@ -42,6 +83,21 @@ def n_comp_6(number):
     >> 615
     """
     return number + (number*10 + number) + (number*100 + number*10 + number)
+
+# 7 question ------------------------------------------------------------
+# Запитайте у користувача ціну страви та відсоток чайових
+meal_price = float(input("Enter the price of the meal: $"))
+tip_percentage = float(input("Enter the tip percentage you want to leave (e.g., 15 for 15%): "))
+
+# Розрахуйте суму чайових
+tip_amount = meal_price * (tip_percentage / 100)
+
+# Обчисліть загальну суму рахунку, включаючи чайові
+total_bill = meal_price + tip_amount
+
+# Показати суму чайових і загальну суму рахунку
+print(f"Tip Amount: ${tip_amount:.2f}")
+print(f"Total Bill (including tip): ${total_bill:.2f}")
 
 # 8 question -------------------------------------------------------------   
 
