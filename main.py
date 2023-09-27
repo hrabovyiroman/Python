@@ -1,3 +1,9 @@
+# 1 question-------------------------------------------------------------
+floating_point = 3 + 5/8
+print(f"Подання з плаваючою комою: {floating_point}")
+integer_part = 3
+print(f"ціле число: {integer_part}")
+
 # 2 question -------------------------------------------------------------
 
 def temperature_convert_2(degrees:float,type:str):
@@ -19,6 +25,13 @@ radius = float(input("Введіть радіус: "))
 pi = 3.1415
 area = round(pi * (radius ** 2), 3)
 print("Площа кола буде - ", area, "см^2")
+
+#5 question------------------------------------------------------------- 
+first_name = input("Введіть своє імя: ")
+last_name = input("Введіть ваше останнє імя: ")
+
+full_name = last_name + " " + first_name
+print("Ваше імя у зворотньому порядку:", full_name)
 
 # 6 question -------------------------------------------------------------   
 
@@ -45,16 +58,23 @@ birthday_date = datetime(year, month, day).date()
 total_number_of_days = (today_date - birthday_date).days
 print(total_number_of_days, "днів - загальна кількість днів від народження.")
 
+# 9 question  -------------------------------------------------------------
+angle = float(input("Enter an angle between -180° and 180°: "))
+
+angle = angle % 360
+print("Equivalent angle between 0° and 360°:", angle)
+
 # 10 question -------------------------------------------------------------
 
 def dec_rand_10():
     '''Функція повертає випадкове число від 1 до 10 з 2 знаками після коми'''
     from random import random
-    return round(random() * 10, 2)
+    return round(random() * 10, 
+
     
 # 12 question -------------------------------------------------------------  
 
-credits_ = int(input("Скільки кредитів ви одтривали? "))
+credits_ = int(input("Скільки кредитів ви отримали? "))
 
 if credits_ <= 23:
     print("Студент є першокурсником.")
@@ -64,7 +84,17 @@ elif 54 <= credits_ <= 83:
     print("Студент є юніор.")
 else:
     print("Студент є старшокурсником.")
-    
+
+#13 question  -------------------------------------------------------------
+centimeters = float(input("Введіть довжину в см: "))
+
+if centimeters < 0:
+    print("Довжина не може бути відємною.")
+else:
+    inches = centimeters / 2.54
+    print(f"{centimeters} см = {inches:.2f} дюймів.")
+
+
 # 14 question -------------------------------------------------------------
 
 def rock_paper_scisors_14():
