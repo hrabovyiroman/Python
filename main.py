@@ -69,7 +69,7 @@ print("Equivalent angle between 0° and 360°:", angle)
 def dec_rand_10():
     '''Функція повертає випадкове число від 1 до 10 з 2 знаками після коми'''
     from random import random
-    return round(random() * 10, 
+    return round(random() * 10, 2)
 
     
 # 12 question -------------------------------------------------------------  
